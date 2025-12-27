@@ -1,0 +1,12 @@
+package day2;
+
+public class Variable {
+	public static void main(String[] args) {
+		//Variable : Named Container4 to store defined data
+		/*
+		 * 1. byte->Whole Number
+		 *     
+		 * 2. short*/
+		
+	}
+}

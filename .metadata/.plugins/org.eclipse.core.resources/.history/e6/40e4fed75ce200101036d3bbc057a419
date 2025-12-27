@@ -1,0 +1,11 @@
+package day5;
+import java.util.Scanner;
+public class While6 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int i, reverse =0;
+		System.out.println("Enter a number: ");
+		i = sc.nextInt();
+		
+	}
+}

@@ -1,0 +1,137 @@
+package mazeSolver;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.*;
+
+public class MazeGUI extends JFrame {
+
+    int n = 5, m = 5;
+
+    // Sample Maze (0 = path, 1 = wall)
+    int[][] maze = {
+        {0,0,1,0,0},
+        {1,0,1,0,1},
+        {0,0,0,0,0},
+        {0,1,1,1,0},
+        {0,0,0,1,0}
+    };
+
+    JButton[][] cells = new JButton[n][m];
+
+    public MazeGUI() {
+        setTitle("Maze Solver - DFS & BFS (Animated)");
+        setSize(500, 550);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
+
+        // -------- Grid Panel --------
+        JPanel gridPanel = new JPanel(new GridLayout(n, m));
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+
+                JButton btn = new JButton();
+                btn.setEnabled(false);
+                btn.setOpaque(true);
+                btn.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+
+                if (maze[i][j] == 1)
+                    btn.setBackground(Color.BLACK);
+                else
+                    btn.setBackground(Color.WHITE);
+
+                cells[i][j] = btn;
+                gridPanel.add(btn);
+            }
+        }
+
+        // -------- Control Panel --------
+        JPanel controlPanel = new JPanel();
+
+        JButton dfsBtn = new JButton("Solve DFS");
+        JButton bfsBtn = new JButton("Solve BFS");
+        JButton resetBtn = new JButton("Reset");
+
+        dfsBtn.addActionListener(e -> solveDFS());
+        bfsBtn.addActionListener(e -> solveBFS());
+        resetBtn.addActionListener(e -> resetMaze());
+
+        controlPanel.add(dfsBtn);
+        controlPanel.add(bfsBtn);
+        controlPanel.add(resetBtn);
+
+        add(gridPanel, BorderLayout.CENTER);
+        add(controlPanel, BorderLayout.SOUTH);
+
+        setVisible(true);
+    }
+
+    // -------- Delay for Animation --------
+    void delay() {
+        try {
+            Thread.sleep(300); // animation speed
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // -------- DFS Animation --------
+    void solveDFS() {
+        new Thread(() -> {
+            boolean[][] visited = new boolean[n][m];
+            mazeFinal.dfsPath.clear();
+
+            if (mazeFinal.dfs(maze, 0, 0, visited, n, m)) {
+
+                Collections.reverse(mazeFinal.dfsPath);
+
+                for (int[] p : mazeFinal.dfsPath) {
+                    cells[p[0]][p[1]].setBackground(Color.CYAN);
+                    delay();
+                }
+
+                cells[0][0].setBackground(Color.GREEN);
+                cells[n-1][m-1].setBackground(Color.RED);
+            } else {
+                JOptionPane.showMessageDialog(this, "No Path Found using DFS");
+            }
+        }).start();
+    }
+
+    // -------- BFS Animation --------
+    void solveBFS() {
+        new Thread(() -> {
+            List<int[]> path = mazeFinal.bfs(maze);
+
+            if (path != null) {
+                for (int[] p : path) {
+                    cells[p[0]][p[1]].setBackground(Color.YELLOW);
+                    delay();
+                }
+
+                cells[0][0].setBackground(Color.GREEN);
+                cells[n-1][m-1].setBackground(Color.RED);
+            } else {
+                JOptionPane.showMessageDialog(this, "No Path Found using BFS");
+            }
+        }).start();
+    }
+
+    // -------- Reset Maze --------
+    void resetMaze() {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (maze[i][j] == 1)
+                    cells[i][j].setBackground(Color.BLACK);
+                else
+                    cells[i][j].setBackground(Color.WHITE);
+            }
+        }
+    }
+
+    // -------- Main --------
+    public static void main(String[] args) {
+        new MazeGUI();
+    }
+}

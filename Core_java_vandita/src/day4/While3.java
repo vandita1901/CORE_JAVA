@@ -1,0 +1,22 @@
+package day4;
+import java.util.Scanner;
+
+public class While3 {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int i;
+		int fact = 1;
+		
+		System.out.println("Enter the Number: ");
+		i = sc.nextInt();
+		int original_value = i;
+		while(i>=1) {
+			fact = fact * i;
+			i--;
+		}
+		System.out.println("The factorial of "+original_value+" is "+fact);
+		
+	}
+
+}

@@ -1,0 +1,42 @@
+package day4;
+import java.util.Scanner;
+public class switch2 {
+
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	float n1, n2, result;
+	char operator;
+	System.out.println("Enter the two numnbers: ");
+	n1 = sc.nextFloat();
+	n2 = sc.nextFloat();
+	
+	System.out.println("Enter the operator: [+ - * /]");
+	operator = sc.next().charAt(0);
+	
+	switch(operator) {
+	case '+':
+		result = n1 + n2;
+		System.out.println("The additiobn of "+n1+" and "+n2+" is "+result);
+		break;
+	case '-':
+		result = n1 - n2;
+		System.out.println("The substraction of "+n1+" and "+n2+" is "+result);
+		break;
+	case '*':
+		result = n1 * n2;
+		System.out.println("The multipkication of "+n1+" and "+n2+" is "+result);
+		break;
+	case '/':
+		if(n2==0) {
+			System.out.println("Cannot divide it by zero");
+		}
+		else {
+		result = n1 / n2;
+		System.out.println("the division of "+n1+" and "+n2+" is "+result);
+		}
+	default:
+			System.out.println("Plaese enter the valid operator");
+	}
+	}
+	
+}

@@ -1,0 +1,33 @@
+package day2;
+
+public class Variable {
+	public static void main(String[] args) {
+		//Variable : Named Container4 to store defined data
+		/*
+		 * 1. byte->Whole Number
+		 *     
+		 * 2. short*/
+			int age = 30;
+			System.out.println("The age is "+age);
+			
+			char alp = '*';
+			System.out.println("The Character is "+alp);
+			
+			float pi = 3.14F;
+			System.out.println("The Float value is :"+pi);
+			
+			long var = 10_00_00_00_000L;
+			System.out.println("The long value is :"+var);
+			
+			double var2 = 678.1729;
+			System.out.println("The double value is :"+var2);
+			
+			boolean isActive = true;
+			System.out.println("The status is currently: "+isActive);
+			
+			
+			
+			
+			
+	}
+}

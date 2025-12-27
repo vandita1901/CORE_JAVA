@@ -1,0 +1,28 @@
+package day3;
+
+import java.util.Scanner;
+
+public class If7 {
+//	 WAP to check whether the character is a number or upper case
+//	 * or lower case or special character
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		char ch;
+		System.out.println("Enter the charcater: ");
+		ch = sc.next().charAt(0);
+		if(ch > '0' && ch < '9') {
+			System.out.println("The character is a Number");
+		}
+		else if(ch >='A' && ch <='Z') {
+			System.out.println("The charcter is an UpperCase character");
+		}
+		else if(ch >='a' && ch <='z') {
+			System.out.println("The character is a lowerCase Character");
+		}
+		else {
+			System.out.println("The character is a special charcter");
+		}
+	}
+
+}

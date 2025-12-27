@@ -1,0 +1,41 @@
+package day3;
+import java.util.Scanner;
+//WAP to accept 2 numbers and operator(+,-,*,/)
+//Based on operator perform results
+
+//Input = 3 Condition = 5
+public class If3 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n1, n2, result;
+		char operator;
+		System.out.println("Enter the two Numbers: ");
+		n1 = sc.nextInt();
+		n2 = sc.nextInt();
+		System.out.println("Enter the Operator:[+ - * /] ");
+		operator = sc.next().charAt(0);
+		if(operator =='+') {
+			result = n1 + n2;
+			System.out.println("The addition of "+n1+" and "+n2+" is "+result);
+		}
+		else if(operator =='-') {
+			result = n1 - n2;
+			System.out.println("The substraction of "+n1+" and "+n2+" is "+result);
+		}
+		else if(operator =='*') {
+			result = n1 * n2;
+			System.out.println("The Multiplication of "+n1+" and "+n2+" is "+result);
+		}
+		else if(operator =='/') {
+			if(n2 == 0) {
+				System.out.println("Cannot divide by zero");
+			}
+			else {
+			result = n1 * n2;
+			System.out.println("The Multiplication of "+n1+" and "+n2+" is "+result);
+			}
+		}
+	}
+
+}

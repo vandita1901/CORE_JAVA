@@ -1,0 +1,25 @@
+package day5;
+import java.util.Scanner;
+public class While7 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int i=1,sum =0, num;
+		System.out.println("Enter a number: ");
+		num = sc.nextInt();
+		
+		while(i<num) {
+			if(num % i ==0) {
+				sum = sum + i; 
+			}
+			i++;
+		}
+		if(num==sum) {
+			System.out.println("It si a perfect Number");
+		}
+		else {
+			System.out.println("It is not a perfect Number");
+		}
+	}
+
+}

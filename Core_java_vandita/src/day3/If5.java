@@ -1,0 +1,54 @@
+package day3;
+import java.util.Scanner;
+/* WAP to check whether the number contains 3 digit or not
+ * Number can be positive or negative
+ * */
+public class If5 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int num;
+		int count =0;
+		System.out.println("Enter the Number: ");
+		num = sc.nextInt();
+		int originalnum = num;
+		if(num<0) {
+			num = -num;
+		}
+		while(num != 0) {
+			count++;
+			num = num / 10;
+		}
+		if(count == 3) {
+			System.out.println(originalnum + " is three digit number");
+		}
+		else {
+			System.out.println(originalnum + " is not a three digit number");
+		}
+	}
+
+}
+
+
+
+
+
+/*
+ * 1. WAP to check whether the number contains 3 digit or not
+ * Number can be positive or negative
+ * 
+ * 2. WAP to check last digit of number is divisible by 3 or not
+ * Ex: n = 189, last_digit = 9 -> number: 189, lastdigit: 9 is divisible by 3
+ * 
+ * 
+ * 3. WAP to check whether the character is a number or upper case
+ * or lower case or special character
+ * 
+ * 4. WAP to display msg based on criteria
+ * a. if number is divisible by 5 -> BUZZ
+ * b. if number is divisible by 3 -> FIZZ
+ * c. if number is divisible by 3 and 5 both -> FIZZBUZZ
+ * d. if number is not divisible by 3 and 5 both -> number
+ * 
+ * 
+ * */

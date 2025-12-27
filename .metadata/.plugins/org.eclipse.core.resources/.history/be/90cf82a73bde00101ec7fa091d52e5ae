@@ -1,0 +1,18 @@
+package day1;
+
+import java.io.PrintStream;
+
+public class Hello {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello World");
+		System.out.print("hello");
+		System.out.print("hello");
+		PrintStream output = System.out;
+		output.println("Hello World");
+		output.print("Vandita_");
+		output.print("Dubey");
+	}
+
+}

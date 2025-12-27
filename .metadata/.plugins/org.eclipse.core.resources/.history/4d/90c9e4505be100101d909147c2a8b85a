@@ -1,0 +1,24 @@
+package day3;
+import java.util.Scanner;
+public class If2 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int number;
+		System.out.println("Enter a Number: ");
+		number = sc.nextInt();
+		if((number % 3 ==0) && (number % 5 ==0)) {
+			System.out.println("The number is divible by both 3 and 5");
+		}
+		else if(number % 5 == 0){
+			System.out.println("The number is divisible only by 5");
+		}
+		else if(number % 3 == 0){
+			System.out.println("The number is divisible only by 3");
+		}
+		else {
+			System.out.println("The number is not divible by both 3 and 5");
+		}
+	}
+
+}
