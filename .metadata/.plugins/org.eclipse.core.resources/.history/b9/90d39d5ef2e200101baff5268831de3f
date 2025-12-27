@@ -33,7 +33,6 @@ public class For2 {
 
 /*
  * 
- * 
  * 1. WAP to check whether the number is Armstrong number or not
  * 2. WAP to check whether the number is a Prime number or not
  * 3. WAP to print series of prime number from 1 to n
