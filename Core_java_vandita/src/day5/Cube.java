@@ -1,7 +1,7 @@
 package day5;
 import java.util.Scanner;
 //WAP to print cube of number till n
-public class For1 {
+public class Cube {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

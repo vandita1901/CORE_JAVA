@@ -1,6 +1,6 @@
 package day5;
 import java.util.Scanner;
-public class While6 {
+public class Pallindrome_while {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int i, reverse =0;
